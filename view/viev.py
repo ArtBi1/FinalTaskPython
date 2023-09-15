@@ -1,6 +1,6 @@
 class View:
     def greeting(self):
-        print("Здравствуйте! Вы открыли 'Заметки'. ")
+        print("Здравствуйте! Вы открыли Заметки. ")
 
     def show_main_menu(self):
         print("Выберите действие:\n"
