@@ -8,7 +8,7 @@ class View:
               "\t2. Прочитать / Изменить / Удалить заметку\n"
               "\t3. Показать список заметок\n"
               "\t4. Сохранить заметки\n"
-              "\t0. Выйти из приложения")
+              "\t0. Завершить работу приложения")
 
     def show_manage_note_menu(self):
         print("Выберите необходимое:\n"
@@ -23,17 +23,17 @@ class View:
         print("Значение не найдено. Повторите попытку:")
 
     def saved_info(self):
-        print("Сохранение успешно! (в файл)")
+        print("Сохранение успешно!")
 
     def show_note(self, note):
         result = f"ID: {str(note.get_id())}|\t"
         result += f"[{str(note.get_date())}]\t"
         result += f"[{str(note.get_name())}]\n"
-        result += f"{str(note.get_text())}\n"
+        result += f"{str(note.get_txt())}\n"
         print(result)
 
     def show_read_all_banner(self, count):
-        result = f"\t*#*# Все заметки #*#*#*\n" \
+        result = f"\t Все заметки:\n" \
                  f"Найдено заметок: {count}\n"
         print(result)
 
@@ -45,10 +45,10 @@ class View:
         return input(f"Введите имя заметки:")
 
     def input_note_text(self):
-        return input(f"Введите ключевые слова заметки:")
+        return input(f"Введите текст заметки:")
 
     def edit_note(self, note):
-        note.set_text(self.input_note_text())
+        note.set_txt(self.input_note_text())
         note.update_date()
         self.info_note_msg('edit')
 
@@ -68,4 +68,4 @@ class View:
         return value
 
     def exit_msg(self):
-        print("Спасибо за использование данной утилиты!")
+        print("До свидания!")
